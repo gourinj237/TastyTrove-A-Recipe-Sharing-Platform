@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TastyTrove | Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Edu+SA+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .head1 {
+                background-color: #a5c29f;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 1.3rem 10%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 100;
+            }
+
+            .l1 {
+                display: inline;
+                text-align: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                color: white;
+                align-items: center;
+            }
+
+            .a1 {
+                list-style: none;
+                text-decoration: none;
+                color: white;
+                margin-left: 2.5rem;
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            .a1:hover {
+                color: #8ca188;
+            }
+
+            .ul1 {
+                display: flex;
+            }
+
+            .logo {
+                font-size: 30px;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Handlee', cursive;
+            }
+
+            .s1 {
+                background-image: url('https://images.unsplash.com/photo-1543353071-873f17a7a088');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 70vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: white;
+                text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+                padding: 1rem;
+            }
+
+            .s1 h1 {
+                margin-top: 100px;
+                font-family: Edu SA Hand;
+                font-size: 40px;
+            }
+
+            .s1 p {
+                font-family: Edu SA Hand;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .b1 {
+               border-radius: 20px;
+               padding-left: 15px;
+               padding-right: 15px;
+               padding-top: 10px;
+               padding-bottom: 10px;
+               border: none;
+               background-color: #a5c29f;
+               color: white;
+               font-weight: 700;
+               cursor: pointer;
+               font-size: 20px;
+               font-family: Edu SA Hand;
+               margin-right: 10px;
+               transition: opacity 0.3s;
+            }
+
+            .b1:hover {
+                opacity: 0.8;
+            }
+
+            .b1 a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .s2 {
+                text-align: center;
+                padding-bottom: 50px;
+            }
+
+            .d1 {
+                margin-top: 50px;
+                border: none;
+                box-shadow: 0px 0px 10px black;
+                width: 429px;
+                margin-left: 58px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                cursor: pointer;
+                display: inline-block;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            .d1 img {
+                border-radius: 8px 8px 0 0;
+                width: 430px;
+                margin-bottom: 10px;
+                height: 30vh;
+                object-fit: cover;
+                transition: transform 0.3s;
+            }
+
+            .d1:hover img {
+                transform: scale(1.03);
+            }
+
+            .d1 p {
+               text-align: center;
+               margin-bottom: 15px;
+               font-size: 20px;
+               font-family: Edu SA Hand;
+               color: #333;
+            }
+
+            .b2 {
+               margin-left: 700px;
+               margin-top: 20px;
+               border-radius: 8px;
+               padding: 8px 16px;
+               color: white;
+               background-color: #a5c29f;
+               margin-bottom: 30px;
+               border: none;
+               cursor: pointer;
+            }
+            
+            .b2:hover {
+                opacity: 0.9;
+            }
+
+            .b2 a {
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: Edu SA Hand;
+            }
+
+            footer {
+                text-align: center;
+                background-color: #a5c29f;
+                padding: 10px 0;
+                font-size: 18px;
+                color: white;
+                font-family: Edu SA Hand;
+            }
+
+            /* Responsive Media Queries */
+            @media (max-width: 1300px) {
+                .d1 {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                .b2 {
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: inline-block;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .head1 {
+                    padding: 1rem 5%;
+                    flex-direction: column;
+                    gap: 10px;
+                    position: static;
+                }
+                
+                .ul1 {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                
+                .a1 {
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                }
+
+                .s1 {
+                    height: auto;
+                    padding: 4rem 1rem;
+                }
+
+                .s1 h1 {
+                    margin-top: 20px;
+                    font-size: 30px;
+                }
+
+                .d1 {
+                    width: 90%;
+                    max-width: 430px;
+                    margin: 30px auto 10px auto;
+                    display: block;
+                }
+
+                .d1 img {
+                    width: 100%;
+                }
+
+                .b2 {
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="head1">
+            <div><a href="{{ url_for('index') }}" class="logo">TastyTrove</a></div>
+            <nav class="n1">
+                <ul class="ul1">
+                    <li class="l1"><a href="{{ url_for('index') }}" class="a1">Home</a></li>
+                    <li class="l1"><a href="{{ url_for('recipes_page') }}" class="a1">Recipes</a></li>
+                    <li class="l1"><a href="{{ url_for('submit_recipe') }}" class="a1">Submit</a></li>
+                    <li class="l1"><a href="{{ url_for('about') }}" class="a1">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="s1">
+            <h1>Welcome to TastyTrove</h1><br>
+            <p>Freshly picked ideas and recipes from kitchens around the world</p><br>
+            <div>
+                <button class="b1"><a href="{{ url_for('recipes_page') }}">Explore Recipe</a></button>
+                <button class="b1"><a href="{{ url_for('submit_recipe') }}">Submit Recipe</a></button>
+            </div>
+        </section>
+
+        <section class="s2">
+            <div class="d1">
+                <a href="{{ url_for('recipes_page', category='Snacks & Fast Foods') }}">
+                    <img src="https://img.freepik.com/premium-photo/collage-assortment-dishes-from-different-countries-world-food-snacks_144356-44515.jpg?w=2000" alt="Snacks & Fast Foods">
+                </a>
+                <p>Snacks & Fast Foods</p>
+            </div>
+
+            <div class="d1">
+                <a href="{{ url_for('recipes_page', category='Breakfast') }}">
+                    <img src="https://as2.ftcdn.net/v2/jpg/06/60/05/27/1000_F_660052705_du1j0lQknvFJOMl16weGr9VMTplEGCRZ.jpg" alt="Breakfast">
+                </a>
+                <p>Breakfast</p>
+            </div>
+
+            <div class="d1">
+                <a href="{{ url_for('recipes_page', category='Desserts') }}">
+                    <img src="https://img.freepik.com/premium-photo/food-collage-dessert-breakfast-photos-set-images-with-edible-dishes-board-menu_361073-126.jpg" alt="Desserts">
+                </a>
+                <p>Desserts</p>
+            </div>
+
+            <div style="text-align: center; width: 100%;">
+                <button class="b2"><a href="{{ url_for('recipes_page') }}">Load More</a></button>
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                &copy; 2025 | Freshly Served Recipes with Love
+            </p>
+        </footer>
+    </body>
+</html>

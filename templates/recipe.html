@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Explore Recipes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Edu+SA+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: #fdfaf6;
+                padding-bottom: 50px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            /* Responsive Navigation Header */
+            .head1 {
+                background-color: #a5c29f;
+                width: 100%;
+                padding: 1.3rem 10%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 100;
+                margin-bottom: 20px;
+            }
+
+            .l1 {
+                display: inline;
+                text-align: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                color: white;
+            }
+
+            .a_nav {
+                list-style: none;
+                text-decoration: none;
+                color: white;
+                margin-left: 2.5rem;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+            }
+
+            .a_nav:hover {
+                color: #8ca188;
+            }
+
+            .ul1 {
+                display: flex;
+                list-style: none;
+            }
+
+            .logo {
+                font-size: 30px;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Handlee', cursive;
+            }
+
+            .p3 {
+                text-align: center;
+                font-size: 36px;
+                font-family: Edu SA Hand;
+                font-weight: bold;
+                color: #5c4a3d;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .filters-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 20px;
+                margin-bottom: 30px;
+                padding: 0 15px;
+            }
+
+            /* Category buttons styling */
+            .category-btn {
+                background-color: #a5c29f;
+                color: white;
+                border: none;
+                border-radius: 20px;
+                padding: 8px 20px;
+                font-family: Edu SA Hand;
+                font-weight: bold;
+                font-size: 16px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background-color 0.3s;
+                display: inline-block;
+            }
+
+            .category-btn.active {
+                background-color: #72a068;
+            }
+
+            .category-btn:hover {
+                background-color: #8ca188;
+            }
+
+            .category-btn a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .search-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 30px;
+                padding: 0 15px;
+            }
+
+            input {
+                width: 100%;
+                max-width: 400px;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 20px;
+                font-size: 16px;
+                box-shadow: 0px 0px 10px rgb(132, 115, 115);
+                font-family: Arial, sans-serif;
+            }
+
+            input:focus {
+                outline: none;
+                box-shadow: 0px 0px 12px #a5c29f;
+            }
+
+            .recipes-grid {
+                text-align: center;
+                padding: 0 5%;
+            }
+
+            .d1 {
+                margin-top: 30px;
+                border: none;
+                box-shadow: 0px 0px 10px black;
+                width: 429px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                cursor: pointer;
+                text-align: center;
+                background-color: white;
+                display: inline-block;
+                vertical-align: top;
+                transition: transform 0.3s;
+                overflow: hidden;
+            }
+
+            .d1:hover {
+                transform: translateY(-5px);
+            }
+
+            img {
+                 width: 100%;
+                 border-radius: 8px 8px 0 0;
+                 height: 30vh;
+                 object-fit: cover;
+                 margin-bottom: 5px;
+            }
+
+            .p1 {
+                font-size: 22px;
+                font-family: Edu SA Hand;
+                font-weight: bold;
+                margin-bottom: 4px;
+                margin-top: 10px;
+                color: #5c4a3d;
+            }
+
+            .p2 {
+                font-family: Edu SA Hand;
+                font-size: 16px;
+                margin-bottom: 12px;
+                margin-top: 6px;
+                color: #666;
+            }
+
+            .view-btn {
+               padding: 8px 20px;
+               margin-bottom: 15px;
+               border: none;
+               background-color: #d7a76c;
+               border-radius: 25px;
+               cursor: pointer;
+               font-family: Edu SA Hand;
+               font-weight: bold;
+               font-size: 16px;
+               transition: background-color 0.3s;
+            }
+
+            .view-btn:hover {
+                background-color: #c49455;
+            }
+
+            .view-btn a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .ppp {
+                color: orange;
+                font-size: 20px;
+                text-align: center;
+                margin-top: 30px;
+                font-family: Edu SA Hand;
+            }
+
+            .flash-messages {
+                width: 80%;
+                max-width: 600px;
+                margin: 10px auto;
+                text-align: center;
+            }
+
+            .flash-message {
+                padding: 10px;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                font-weight: bold;
+                list-style: none;
+            }
+
+            .flash-message.success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+
+            /* Responsive Media Queries */
+            @media (max-width: 992px) {
+                .d1 {
+                    width: calc(50% - 30px);
+                    margin: 15px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .head1 {
+                    padding: 1rem 5%;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+                .ul1 {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                
+                .a_nav {
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                }
+
+                .d1 {
+                    width: 90%;
+                    max-width: 430px;
+                    margin: 20px auto;
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header class="head1">
+            <div><a href="{{ url_for('index') }}" class="logo">TastyTrove</a></div>
+            <nav class="n1">
+                <ul class="ul1">
+                    <li class="l1"><a href="{{ url_for('index') }}" class="a_nav">Home</a></li>
+                    <li class="l1"><a href="{{ url_for('recipes_page') }}" class="a_nav">Recipes</a></li>
+                    <li class="l1"><a href="{{ url_for('submit_recipe') }}" class="a_nav">Submit</a></li>
+                    <li class="l1"><a href="{{ url_for('about') }}" class="a_nav">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <p class="p3">Explore Recipes</p>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search for a recipe..." id="searchInput" value="{{ search_query }}">
+        </div>
+
+        <div class="filters-container">
+            <button class="category-btn {% if not category_filter %}active{% endif %}"><a href="{{ url_for('recipes_page') }}">🍽️ All</a></button>
+            <button class="category-btn {% if category_filter == 'Breakfast' %}active{% endif %}"><a href="{{ url_for('recipes_page', category='Breakfast') }}">🍳 Breakfast</a></button>
+            <button class="category-btn {% if category_filter == 'Desserts' %}active{% endif %}"><a href="{{ url_for('recipes_page', category='Desserts') }}">🍰 Desserts</a></button>
+            <button class="category-btn {% if category_filter == 'Snacks & Fast Foods' %}active{% endif %}"><a href="{{ url_for('recipes_page', category='Snacks & Fast Foods') }}">🥗 Snacks & Fast Foods</a></button>
+            <button class="category-btn {% if category_filter == 'Drinks' %}active{% endif %}"><a href="{{ url_for('recipes_page', category='Drinks') }}">🥤 Drinks</a></button>
+        </div>
+
+        <div class="recipes-grid">
+            {% for recipe in recipes %}
+                <div class="d1" data-category="{{ recipe.category }}">
+                    <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}">
+                    <p class="p1">{{ recipe.title }}</p>
+                    <p class="p2">⏱️ {{ recipe.time }} mins ⭐{{ recipe.rating }}</p>
+                    <button class="view-btn"><a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}">View Recipe</a></button>
+                </div>
+            {% else %}
+                <p class="ppp">No recipes found matching your criteria. Be the first to submit one!</p>
+            {% endfor %}
+
+            <div id="noResultsContainer" style="display: none; text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                <p class="ppp" style="color: gray; font-style: italic; font-size: 18px; margin-bottom: 15px; display: block; width: 100%;">
+                    Sorry, no results found. Be the first to add the recipe 🍽️
+                </p>
+                <button class="view-btn" style="background-color: #72a068; margin-bottom: 0;"><a href="{{ url_for('submit_recipe') }}" style="color: white;">Submit Recipe</a></button>
+            </div>
+        </div>
+
+        <script>
+            const searchInput = document.getElementById('searchInput');
+            const recipeCards = document.querySelectorAll('.d1');
+            const noResultsContainer = document.getElementById('noResultsContainer');
+
+            searchInput.addEventListener('input', function () {
+                const searchValue = this.value.toLowerCase();
+                let anyVisible = false;
+
+                recipeCards.forEach(card => {
+                    const title = card.querySelector('.p1').textContent.toLowerCase();
+                    if (title.includes(searchValue)) {
+                        card.style.display = "inline-block";
+                        anyVisible = true;
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+
+                if (noResultsContainer) {
+                    noResultsContainer.style.display = anyVisible ? "none" : "block";
+                }
+            });
+        </script>
+    </body>
+</html>
