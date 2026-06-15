@@ -2,7 +2,7 @@
 
 TastyTrove is a recipe discovery and sharing web app built with Flask and SQLite, featuring AI-powered recipe recommendations. Users can browse recipes by category, search, rate dishes, view detailed cooking instructions, and submit their own recipes.
 
-Live Demo: https://tastytrove-a-recipe-sharing-platform-2.onrender.com/
+Live Demo: https://tastytrove-a-recipe-sharing-platform.onrender.com
 
 # Features
 
