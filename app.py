@@ -6,7 +6,10 @@ from ml_models import MLModels
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tastytrove_secret_key_1234'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database1.db'
+db_url = os.environ.get('DATABASE_URL', 'sqlite:///database1.db')
+if db_url.startswith('postgres://'):
+    db_url = db_url.replace('postgres://', 'postgresql://', 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
 
